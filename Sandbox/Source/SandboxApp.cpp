@@ -5,12 +5,10 @@ class Sandbox : public Framy::Application
 public:
     Sandbox()
     {
-
     }
 
     ~Sandbox()
     {
-
     }
 };
 
