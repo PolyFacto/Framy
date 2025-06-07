@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.26)
-project(ProjectTemplate)
+project(Framy)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_subdirectory(Core)
-add_subdirectory(App)
+add_subdirectory(Framy)
+add_subdirectory(Sandbox)
