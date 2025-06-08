@@ -21,4 +21,7 @@ set(BINARIES_DIR ${CMAKE_SOURCE_DIR}/Binaries/${PROJECT_NAME}/${CMAKE_BUILD_TYPE
 set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${BINARIES_DIR})
 
 target_link_libraries(Sandbox PUBLIC Framy)
-target_include_directories(Framy PUBLIC ${CMAKE_SOURCE_DIR}/Framy/Include)
+target_include_directories(Framy PUBLIC
+        ${CMAKE_SOURCE_DIR}/Framy
+        ${CMAKE_SOURCE_DIR}/Framy/Include
+)

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-
 #include "spdlog/spdlog.h"
 
 namespace Framy {
@@ -26,11 +24,11 @@ namespace Framy {
     #define CORE_ERROR(...)  ::Framy::Log::GetCoreLogger()->error(__VA_ARGS__)
     #define CORE_FATAL(...)  ::Framy::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
-    #define TRACE(...)       ::Framy::Log::GetClientLogger()->trace(__VA_ARGS__)
-    #define INFO(...)        ::Framy::Log::GetClientLogger()->info(__VA_ARGS__)
-    #define WARN(...)        ::Framy::Log::GetClientLogger()->warn(__VA_ARGS__)
-    #define ERROR(...)       ::Framy::Log::GetClientLogger()->error(__VA_ARGS__)
-    #define FATAL(...)       ::Framy::Log::GetClientLogger()->critical(__VA_ARGS__)
+    #define LOG_TRACE(...)   ::Framy::Log::GetClientLogger()->trace(__VA_ARGS__)
+    #define LOG_INFO(...)    ::Framy::Log::GetClientLogger()->info(__VA_ARGS__)
+    #define LOG_WARN(...)    ::Framy::Log::GetClientLogger()->warn(__VA_ARGS__)
+    #define LOG_ERROR(...)   ::Framy::Log::GetClientLogger()->error(__VA_ARGS__)
+    #define LOG_FATAL(...)   ::Framy::Log::GetClientLogger()->critical(__VA_ARGS__)
 #else
     #define CORE_TRACE
     #define CORE_INFO
@@ -38,9 +36,9 @@ namespace Framy {
     #define CORE_ERROR
     #define CORE_FATAL
 
-    #define TRACE
-    #define INFO
-    #define WARN
-    #define ERROR
-    #define FATAL
+    #define LOG_TRACE
+    #define LOG_INFO
+    #define LOG_WARN
+    #define LOG_ERROR
+    #define LOG_FATAL
 #endif
