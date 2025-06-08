@@ -20,3 +20,13 @@ set(BINARIES_DIR ${CMAKE_SOURCE_DIR}/Binaries/${PROJECT_NAME}/${CMAKE_BUILD_TYPE
 
 set_target_properties(${PROJECT_NAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${BINARIES_DIR})
 target_include_directories(Framy PUBLIC ${CMAKE_SOURCE_DIR}/Source)
+
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_definitions(Framy PUBLIC BUILD_DEBUG)
+elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+    target_compile_definitions(Framy PUBLIC BUILD_RELEASE)
+endif()
+
+# spdlog
+add_subdirectory(ThirdParty/spdlog)
+target_link_libraries(Framy PUBLIC spdlog::spdlog)

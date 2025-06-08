@@ -1,0 +1,3 @@
+[submodule "Framy/ThirdParty/spdlog"]
+	path = Framy/ThirdParty/spdlog
+	url = https://github.com/gabime/spdlog.git
