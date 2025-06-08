@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Framy {
 
     class WindowResizeEvent : public Event

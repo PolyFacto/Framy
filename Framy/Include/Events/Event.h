@@ -1,9 +1,7 @@
 #pragma once
 
+#include "framy_pch.h"
 #include "Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Framy {
 	enum class EventType
