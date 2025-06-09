@@ -1,10 +1,13 @@
 #include "framy_pch.h"
-#include "Platform/Windows/WindowsWindow.h"
+#include "WindowsWindow.h"
 #include "Log.h"
 
 #include "Events/ApplicationEvent.h"
 #include "Events/KeyEvent.h"
 #include "Events/MouseEvent.h"
+
+#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace Framy {
     static bool s_GLFWInitialized = false;
@@ -47,6 +50,8 @@ namespace Framy {
 
         m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        CORE_ASSERT(status, "Could not initialize Glad!");
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
 

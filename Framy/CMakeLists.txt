@@ -23,7 +23,9 @@ set_target_properties(${PROJECT_NAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${BINA
 target_include_directories(Framy
         PUBLIC ${CMAKE_SOURCE_DIR}/Framy
         PUBLIC ${CMAKE_SOURCE_DIR}/Framy/Include
+        PUBLIC ${CMAKE_SOURCE_DIR}/Framy/Include/Platform/Windows
         PUBLIC ${CMAKE_SOURCE_DIR}/Framy/ThirdParty/GLFW/include
+        PUBLIC ${CMAKE_SOURCE_DIR}/Framy/ThirdParty/GLAD/include
 )
 target_precompile_headers(Framy PUBLIC framy_pch.h)
 
@@ -42,3 +44,8 @@ add_subdirectory(ThirdParty/GLFW)
 target_link_libraries(Framy PUBLIC glfw)
 find_package(OpenGL REQUIRED)
 target_link_libraries(Framy PUBLIC OpenGL::GL)
+
+# GLAD
+target_compile_definitions(Framy PUBLIC GLFW_INCLUDE_NONE)
+add_subdirectory(ThirdParty/GLAD)
+target_link_libraries(Framy PRIVATE glad)
