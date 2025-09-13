@@ -50,7 +50,7 @@ namespace Framy {
     {
         while (m_Running)
         {
-            glClearColor(1.0f, 0.3f, 0.3f, 1.0f);
+            glClearColor(1.0f, 0.5f, 0.5f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
             for (Layer* layer : m_LayerStack)
@@ -61,5 +61,4 @@ namespace Framy {
             m_Window->OnUpdate();
         }
     }
-
 } // Framy
